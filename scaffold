@@ -1,0 +1,5 @@
+scaffold course code name description:text level price:float
+scaffold tutor first_name last_name national_id passport_number phone_number email phycal_address:text
+scaffold qualification tutor:references
+scaffold student
+scaffold course_enrolment student:references
