@@ -9,6 +9,11 @@
   </head>
 
   <body>
+    <% if current_student %>
+    <%= link_to "Logout Student", destroy_student_session_path, method: :delete %>
+    <% elsif current_tutor %>
+    <%= link_to "Logout Tutor", destroy_tutor_session_path, method: :delete %>
+    <% end %>
     <%= yield %>
   </body>
 </html>
