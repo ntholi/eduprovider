@@ -13,8 +13,8 @@ class ApplicationController < ActionController::Base
   def authenticate
     if params['controller'] == 'home' && params['action'] == 'tutor_home'
       authenticate_tutor!
-    else
-      authenticate_student!
+    # else
+    #   authenticate_student!
     end
   end
 end

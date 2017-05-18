@@ -25,7 +25,7 @@ class TutoredCoursesController < ApplicationController
   # POST /tutored_courses.json
   def create
     @tutored_course = TutoredCourse.new(tutored_course_params)
-
+    @tutored_course.tutor = current_tutor
     respond_to do |format|
       if @tutored_course.save
         format.html { redirect_to @tutored_course, notice: 'Tutored course was successfully created.' }

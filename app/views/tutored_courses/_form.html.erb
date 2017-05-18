@@ -1,27 +1,23 @@
 <%= form_with(model: tutored_course, local: true) do |form| %>
-  <% if tutored_course.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(tutored_course.errors.count, "error") %> prohibited this tutored_course from being saved:</h2>
+<% if tutored_course.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(tutored_course.errors.count, "error") %>
+    prohibited this tutored_course from being saved:</h2>
 
-      <ul>
-      <% tutored_course.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% tutored_course.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= form.label :tutor_id %>
-    <%= form.text_field :tutor_id, id: :tutored_course_tutor_id %>
-  </div>
+<div class="field">
+  <%= form.label :course_id %>
+  <%= form.collection_select :course_id, Course.all, :id, :name %>
+</div>
 
-  <div class="field">
-    <%= form.label :course_id %>
-    <%= form.text_field :course_id, id: :tutored_course_course_id %>
-  </div>
-
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<div class="actions">
+  <%= form.submit %>
+</div>
 <% end %>
