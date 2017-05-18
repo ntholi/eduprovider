@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
     if resource.class == Tutor
       tutor_root_path
     elsif resource.class == Student
-      root_path
+      student_root_path
     end
   end
 

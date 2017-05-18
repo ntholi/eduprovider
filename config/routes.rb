@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   devise_for :tutors
   resources :user_profiles
 
-  get 'home/student_home'
+  get 'home/student_home', as: :student_root
   get 'home/tutor_home'
   get '/tutor', to: 'home#tutor_home', as: :tutor_root
   get 'home/index'
