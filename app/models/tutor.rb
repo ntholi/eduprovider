@@ -5,4 +5,5 @@ class Tutor < ApplicationRecord
          :recoverable, :rememberable, :trackable, :validatable,
          :confirmable
   belongs_to :user_profile, optional: true
+  has_many :tutored_courses
 end
