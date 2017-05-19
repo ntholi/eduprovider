@@ -2,7 +2,8 @@ scaffold course code name description:text level price:float
 scaffold user_profile email first_name last_name date_of_birth:date street_name city country phone_number
 rails generate devise tutor user_profile:references
 scaffold tutored_course tutor:references course:references
-scaffold lesson tutored_course:references
+scaffold lesson tutored_course:references title summary:text
+scaffold video_lesson lesson:references
 rails generate devise student user_profile:references
 scaffold student_enrollment student:references tutored_course:references
 scaffold qualification tutor:references
