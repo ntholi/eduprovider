@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :video_lessons
   resources :lessons
   resources :courses
   resources :tutored_courses

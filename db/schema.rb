@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170519081810) do
+ActiveRecord::Schema.define(version: 20170519102425) do
 
   create_table "courses", force: :cascade do |t|
     t.string "code"
@@ -94,6 +94,14 @@ ActiveRecord::Schema.define(version: 20170519081810) do
     t.string "phone_number"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+  end
+
+  create_table "video_lessons", force: :cascade do |t|
+    t.integer "lesson_id"
+    t.string "video"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lesson_id"], name: "index_video_lessons_on_lesson_id"
   end
 
 end
