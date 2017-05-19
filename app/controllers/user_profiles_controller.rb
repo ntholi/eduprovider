@@ -15,6 +15,7 @@ class UserProfilesController < ApplicationController
   # GET /user_profiles/new
   def new
     @user_profile = UserProfile.new
+    @user_profile.email = current_tutor ? current_tutor.email : current_student.email
   end
 
   # GET /user_profiles/1/edit
@@ -25,7 +26,12 @@ class UserProfilesController < ApplicationController
   # POST /user_profiles.json
   def create
     @user_profile = UserProfile.new(user_profile_params)
-
+    if current_tutor
+      @user_profile.tutor = current_tutor
+    end
+    if current_student
+      @user_profile.student = current_student
+    end
     respond_to do |format|
       if @user_profile.save
         format.html { redirect_to @user_profile, notice: 'User profile was successfully created.' }
