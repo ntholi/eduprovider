@@ -1,10 +1,12 @@
-<h1>Wellcome</h1>
+<h1>Wellcome,
+  <%= current_tutor %></h1>
 
 <% if @tutored_courses %>
 <table>
   <thead>
     <tr>
-      <th>Course</th>
+      <th>Registered Courses</th>
+      <th>Lessons</th>
       <th></th>
     </tr>
   </thead>
@@ -12,8 +14,7 @@
   <tbody>
     <% @tutored_courses.each do |tutored_course| %>
     <tr>
-      <td><%= tutored_course.tutor %></td>
-      <td><%= tutored_course.course %></td>
+      <td><%= link_to tutored_course.course, tutored_course.course %></td>
       <td><%= link_to 'Show', tutored_course %></td>
       <td><%= link_to 'Destroy', tutored_course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
