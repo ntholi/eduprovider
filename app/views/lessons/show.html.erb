@@ -14,6 +14,10 @@
   <strong>Summary:</strong>
   <%= @lesson.summary %>
 </p>
+<p>
+  <%= link_to 'Add video content', new_video_lesson_path(lesson_id: @lesson.id ) %>
+</p>
 
-<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
+<%= link_to 'Edit', edit_lesson_path(@lesson) %>
+|
 <%= link_to 'Back', lessons_path %>

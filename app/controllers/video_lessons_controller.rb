@@ -15,6 +15,7 @@ class VideoLessonsController < ApplicationController
   # GET /video_lessons/new
   def new
     @video_lesson = VideoLesson.new
+    @video_lesson.lesson = Lesson.find(params[:lesson_id])
   end
 
   # GET /video_lessons/1/edit

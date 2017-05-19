@@ -1,27 +1,29 @@
 <%= form_with(model: video_lesson, local: true) do |form| %>
-  <% if video_lesson.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(video_lesson.errors.count, "error") %> prohibited this video_lesson from being saved:</h2>
+<% if video_lesson.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(video_lesson.errors.count, "error") %>
+    prohibited this video_lesson from being saved:</h2>
 
-      <ul>
-      <% video_lesson.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% video_lesson.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= form.label :lesson_id %>
-    <%= form.text_field :lesson_id, id: :video_lesson_lesson_id %>
-  </div>
+<div class="field">
+  <%= form.label :lesson_id %>
+  <%= form.text_field :lesson_id, id: :video_lesson_lesson_id %>
+  <!-- <%= form.collection_select :tutored_course_id, current_tutor.tutored_courses, :id, :to_s %> -->
+</div>
 
-  <div class="field">
-    <%= form.label :video %>
-    <%= form.text_field :video, id: :video_lesson_video %>
-  </div>
+<div class="field">
+  <%= form.label :video %>
+  <%= form.file_field :video, id: :video_lesson_video %>
+</div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<div class="actions">
+  <%= form.submit %>
+</div>
 <% end %>
