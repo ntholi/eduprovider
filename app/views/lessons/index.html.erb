@@ -2,6 +2,7 @@
 
 <h1>Lessons</h1>
 
+<% if @lessons %>
 <table>
   <thead>
     <tr>
@@ -14,18 +15,18 @@
 
   <tbody>
     <% @lessons.each do |lesson| %>
-      <tr>
-        <td><%= lesson.tutored_course %></td>
-        <td><%= lesson.title %></td>
-        <td><%= lesson.summary %></td>
-        <td><%= link_to 'Show', lesson %></td>
-        <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
-        <td><%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= lesson.tutored_course %></td>
+      <td><%= lesson.title %></td>
+      <td><%= lesson.summary %></td>
+      <td><%= link_to 'Show', lesson %></td>
+      <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
+      <td><%= link_to 'Destroy', lesson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
-
+<% end %>
 <br>
 
 <%= link_to 'New Lesson', new_lesson_path %>

@@ -15,10 +15,11 @@
     <% @tutored_courses.each do |tutored_course| %>
     <tr>
       <td><%= link_to tutored_course.course, tutored_course.course %></td>
+      <td><%= link_to 'Lessons', lessons_path(tutored_course_id: tutored_course.id) %></td>
       <td><%= link_to 'Show', tutored_course %></td>
       <td><%= link_to 'Destroy', tutored_course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>
     <% end %>
   </tbody>
-  <% end %>
 </table>
+<% end %>
