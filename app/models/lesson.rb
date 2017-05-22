@@ -1,4 +1,4 @@
 class Lesson < ApplicationRecord
   belongs_to :tutored_course
-  has_many :lessons
+  has_many :video_lessons 
 end
