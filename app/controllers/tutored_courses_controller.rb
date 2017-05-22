@@ -28,7 +28,7 @@ class TutoredCoursesController < AuthenticateTutorController
     @tutored_course.tutor = current_tutor
     respond_to do |format|
       if @tutored_course.save
-        format.html { redirect_to @tutored_course, notice: 'Tutored course was successfully created.' }
+        format.html { redirect_to tutored_courses_path, notice: 'Registered successfully' }
         format.json { render :show, status: :created, location: @tutored_course }
       else
         format.html { render :new }

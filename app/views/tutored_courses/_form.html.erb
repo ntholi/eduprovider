@@ -1,4 +1,4 @@
-<%= form_with(model: tutored_course, local: true) do |form| %>
+<%= bootstrap_form_for(tutored_course, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |form| %>
 <% if tutored_course.errors.any? %>
 <div id="error_explanation">
   <h2><%= pluralize(tutored_course.errors.count, "error") %>
@@ -12,12 +12,9 @@
 </div>
 <% end %>
 
-<div class="field">
-  <%= form.label :course_id %>
-  <%= form.collection_select :course_id, Course.all, :id, :name %>
-</div>
+<%= form.collection_select :course_id, Course.all, :id, :name %>
 
-<div class="actions">
-  <%= form.submit %>
-</div>
+<%= form.form_group do %>
+<%= form.submit %>
+<% end %>
 <% end %>
