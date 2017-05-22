@@ -31,10 +31,10 @@
               <%= link_to 'Tutor', tutor_root_path %>
             </li>
             <% elsif current_tutor  %>
-            <li>
-              <%= link_to 'Courses', tutored_courses_path %>
-            </li>
+            <li><%= link_to 'Home', tutor_root_path %></li>
+            <li><%= link_to 'Courses', tutored_courses_path %></li>
             <% elsif current_student %>
+            <li><%= link_to 'Home', student_root_path %></li>
             <li>
               <%= link_to 'Courses', student_enrollments_path %>
             </li>
