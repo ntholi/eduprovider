@@ -1,4 +1,4 @@
-class TutoredCoursesController < ApplicationController
+class TutoredCoursesController < AuthenticateTutorController
   before_action :set_tutored_course, only: [:show, :edit, :update, :destroy]
 
   # GET /tutored_courses

@@ -11,10 +11,18 @@ class ApplicationController < ActionController::Base
   end
 
   def authenticate
-    if params['controller'] == 'home' && params['action'] == 'tutor_home'
+    if controller_is('home') && action_is('tutor_home')
       authenticate_tutor!
-    # else
-    #   authenticate_student!
+    else
+      authenticate_student!
     end
+  end
+
+  def controller_is(name)
+    params['controller'] == name
+  end
+
+  def action_is(name)
+    params['action'] == name
   end
 end
