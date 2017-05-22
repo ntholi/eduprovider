@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   def authenticate
     if controller_is('home') && action_is('tutor_home')
       authenticate_tutor!
-    else
+    elsif controller_is('home') && action_is('student_home')
       authenticate_student!
     end
   end
