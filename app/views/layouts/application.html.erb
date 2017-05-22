@@ -30,12 +30,9 @@
             <li>
               <%= link_to 'Tutor', tutor_root_path %>
             </li>
-            <% elsif current_tutor %>
+            <% elsif current_tutor or current_student %>
             <li>
               <%= link_to 'Courses', tutored_courses_path %>
-            </li>
-            <li>
-              <%= link_to 'Tutor', tutor_root_path %>
             </li>
             <% end %>
           </ul>
