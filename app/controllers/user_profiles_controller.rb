@@ -34,7 +34,8 @@ class UserProfilesController < ApplicationController
     end
     respond_to do |format|
       if @user_profile.save
-        format.html { redirect_to @user_profile, notice: 'User profile was successfully created.' }
+        reditect_path = current_student ? current_student : current_tutor
+        format.html { redirect_to @user_profile, notice: 'Thank you for singing up' }
         format.json { render :show, status: :created, location: @user_profile }
       else
         format.html { render :new }
