@@ -5,7 +5,7 @@ one:
   first_name: MyString
   last_name: MyString
   date_of_birth: 2017-05-16
-  street_name: MyString
+  area_name: MyString
   city: MyString
   country: MyString
   phone_number: MyString
@@ -15,7 +15,7 @@ two:
   first_name: MyString
   last_name: MyString
   date_of_birth: 2017-05-16
-  street_name: MyString
+  area_name: MyString
   city: MyString
   country: MyString
   phone_number: MyString

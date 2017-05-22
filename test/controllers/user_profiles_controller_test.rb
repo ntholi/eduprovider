@@ -17,7 +17,7 @@ class UserProfilesControllerTest < ActionDispatch::IntegrationTest
 
   test "should create user_profile" do
     assert_difference('UserProfile.count') do
-      post user_profiles_url, params: { user_profile: { city: @user_profile.city, country: @user_profile.country, date_of_birth: @user_profile.date_of_birth, email: @user_profile.email, first_name: @user_profile.first_name, last_name: @user_profile.last_name, phone_number: @user_profile.phone_number, street_name: @user_profile.street_name } }
+      post user_profiles_url, params: { user_profile: { city: @user_profile.city, country: @user_profile.country, date_of_birth: @user_profile.date_of_birth, email: @user_profile.email, first_name: @user_profile.first_name, last_name: @user_profile.last_name, phone_number: @user_profile.phone_number, area_name: @user_profile.area_name } }
     end
 
     assert_redirected_to user_profile_url(UserProfile.last)
@@ -34,7 +34,7 @@ class UserProfilesControllerTest < ActionDispatch::IntegrationTest
   end
 
   test "should update user_profile" do
-    patch user_profile_url(@user_profile), params: { user_profile: { city: @user_profile.city, country: @user_profile.country, date_of_birth: @user_profile.date_of_birth, email: @user_profile.email, first_name: @user_profile.first_name, last_name: @user_profile.last_name, phone_number: @user_profile.phone_number, street_name: @user_profile.street_name } }
+    patch user_profile_url(@user_profile), params: { user_profile: { city: @user_profile.city, country: @user_profile.country, date_of_birth: @user_profile.date_of_birth, email: @user_profile.email, first_name: @user_profile.first_name, last_name: @user_profile.last_name, phone_number: @user_profile.phone_number, area_name: @user_profile.area_name } }
     assert_redirected_to user_profile_url(@user_profile)
   end
 

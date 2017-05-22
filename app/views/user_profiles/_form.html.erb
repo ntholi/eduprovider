@@ -1,57 +1,58 @@
 <%= form_with(model: user_profile, local: true) do |form| %>
-  <% if user_profile.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(user_profile.errors.count, "error") %> prohibited this user_profile from being saved:</h2>
+<% if user_profile.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(user_profile.errors.count, "error") %>
+    prohibited this user_profile from being saved:</h2>
 
-      <ul>
-      <% user_profile.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
+  <ul>
+    <% user_profile.errors.full_messages.each do |message| %>
+    <li><%= message %></li>
+    <% end %>
+  </ul>
+</div>
+<% end %>
 
-  <div class="field">
-    <%= form.label :email %>
-    <%= form.text_field :email, id: :user_profile_email %>
-  </div>
+<div class="field">
+  <%= form.label :email %>
+  <%= form.text_field :email, id: :user_profile_email %>
+</div>
 
-  <div class="field">
-    <%= form.label :first_name %>
-    <%= form.text_field :first_name, id: :user_profile_first_name %>
-  </div>
+<div class="field">
+  <%= form.label :first_name %>
+  <%= form.text_field :first_name, id: :user_profile_first_name %>
+</div>
 
-  <div class="field">
-    <%= form.label :last_name %>
-    <%= form.text_field :last_name, id: :user_profile_last_name %>
-  </div>
+<div class="field">
+  <%= form.label :last_name %>
+  <%= form.text_field :last_name, id: :user_profile_last_name %>
+</div>
 
-  <div class="field">
-    <%= form.label :date_of_birth %>
-    <%= form.date_select :date_of_birth, id: :user_profile_date_of_birth %>
-  </div>
+<div class="field">
+  <%= form.label :date_of_birth %>
+  <%= form.date_select :date_of_birth, id: :user_profile_date_of_birth %>
+</div>
 
-  <div class="field">
-    <%= form.label :street_name %>
-    <%= form.text_field :street_name, id: :user_profile_street_name %>
-  </div>
+<div class="field">
+  <%= form.label :area_name %>
+  <%= form.text_field :area_name, id: :user_profile_area_name %>
+</div>
 
-  <div class="field">
-    <%= form.label :city %>
-    <%= form.text_field :city, id: :user_profile_city %>
-  </div>
+<div class="field">
+  <%= form.label :city %>
+  <%= form.text_field :city, id: :user_profile_city %>
+</div>
 
-  <div class="field">
-    <%= form.label :country %>
-    <%= form.text_field :country, id: :user_profile_country %>
-  </div>
+<div class="field">
+  <%= form.label :country %>
+  <%= form.text_field :country, id: :user_profile_country %>
+</div>
 
-  <div class="field">
-    <%= form.label :phone_number %>
-    <%= form.text_field :phone_number, id: :user_profile_phone_number %>
-  </div>
+<div class="field">
+  <%= form.label :phone_number %>
+  <%= form.text_field :phone_number, id: :user_profile_phone_number %>
+</div>
 
-  <div class="actions">
-    <%= form.submit %>
-  </div>
+<div class="actions">
+  <%= form.submit %>
+</div>
 <% end %>

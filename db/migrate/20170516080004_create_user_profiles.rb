@@ -5,7 +5,7 @@ class CreateUserProfiles < ActiveRecord::Migration[5.1]
       t.string :first_name
       t.string :last_name
       t.date :date_of_birth
-      t.string :street_name
+      t.string :area_name
       t.string :city
       t.string :country
       t.string :phone_number
