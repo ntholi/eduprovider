@@ -1,6 +1,6 @@
 <p>
   <strong><%= @lesson.title %></strong>
-  (<%= link_to @lesson.tutored_course.course, @lesson.tutored_course.course %>)
+  (<%= @lesson.tutored_course.course %>)
 </p>
 
 <p>
@@ -17,8 +17,10 @@
   <%= @lesson.summary %>
 </p>
 
-<p>
-  <%= link_to 'Add video content', new_video_lesson_path(lesson_id: @lesson.id ) %>
-</p>
-
+<% if current_tutor %>
+<% if !@lesson.video_lessons.first %>
+<%= link_to 'Add video content', new_video_lesson_path(lesson_id: @lesson.id ) %>
+<br/>
+<% end %>
 <%= link_to 'Update', edit_lesson_path(@lesson) %>
+<% end %>
