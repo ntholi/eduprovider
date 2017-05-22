@@ -2,7 +2,7 @@
 
 <h1>Video Lessons</h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Lesson</th>
@@ -13,13 +13,13 @@
 
   <tbody>
     <% @video_lessons.each do |video_lesson| %>
-      <tr>
-        <td><%= video_lesson.lesson %></td>
-        <td><%= video_lesson.video %></td>
-        <td><%= link_to 'Show', video_lesson %></td>
-        <td><%= link_to 'Edit', edit_video_lesson_path(video_lesson) %></td>
-        <td><%= link_to 'Destroy', video_lesson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= video_lesson.lesson %></td>
+      <td><%= video_lesson.video %></td>
+      <td><%= link_to 'Show', video_lesson %></td>
+      <td><%= link_to 'Edit', edit_video_lesson_path(video_lesson) %></td>
+      <td><%= link_to 'Destroy', video_lesson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>

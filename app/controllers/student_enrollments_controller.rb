@@ -25,10 +25,10 @@ class StudentEnrollmentsController < ApplicationController
   # POST /student_enrollments.json
   def create
     @student_enrollment = StudentEnrollment.new(student_enrollment_params)
-
+    @student_enrollment.student = current_student
     respond_to do |format|
       if @student_enrollment.save
-        format.html { redirect_to @student_enrollment, notice: 'Student enrollment was successfully created.' }
+        format.html { redirect_to @student_enrollment, notice: 'You have enrolled successfully' }
         format.json { render :show, status: :created, location: @student_enrollment }
       else
         format.html { render :new }
