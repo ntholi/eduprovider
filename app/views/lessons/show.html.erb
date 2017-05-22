@@ -1,22 +1,9 @@
-<p id="notice"><%= notice %></p>
-
 <p>
-  <strong>Tutored course:</strong>
-  <%= @lesson.tutored_course %>
+  <strong><%= @lesson.title %></strong>
+  (<%= link_to @lesson.tutored_course.course, @lesson.tutored_course.course %>)
 </p>
 
 <p>
-  <strong>Title:</strong>
-  <%= @lesson.title %>
-</p>
-
-<p>
-  <strong>Summary:</strong>
-  <%= @lesson.summary %>
-</p>
-
-<p>
-  <strong>Video:</strong>
   <% @lesson.video_lessons.each do |video| %>
   <video width="320" height="240" controls>
     <source src="<%= video.video %>" type="video/mp4">
@@ -26,9 +13,12 @@
 </p>
 
 <p>
+  <strong>Summary:</strong>
+  <%= @lesson.summary %>
+</p>
+
+<p>
   <%= link_to 'Add video content', new_video_lesson_path(lesson_id: @lesson.id ) %>
 </p>
 
-<%= link_to 'Edit', edit_lesson_path(@lesson) %>
-|
-<%= link_to 'Back', lessons_path %>
+<%= link_to 'Update', edit_lesson_path(@lesson) %>

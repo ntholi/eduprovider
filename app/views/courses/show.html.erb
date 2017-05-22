@@ -1,5 +1,5 @@
-<p id="notice"><%= notice %></p>
-
+<h1><%= @course %></h1>
+<br/>
 <p>
   <strong>Code:</strong>
   <%= @course.code %>
@@ -25,5 +25,4 @@
   <%= @course.price %>
 </p>
 
-<%= link_to 'Edit', edit_course_path(@course) %> |
-<%= link_to 'Back', courses_path %>
+<%= link_to 'Back', tutored_courses_path %>
