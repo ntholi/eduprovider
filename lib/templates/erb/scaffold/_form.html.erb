@@ -13,15 +13,14 @@
 
 <% attributes.each do |attribute| -%>
 <% if attribute.password_digest? -%>
-<%%= f.password_field :password %>%>
-<%%= f.password_field :password_confirmation %>%>
+<%%= f.password_field :password %> %>
+<%%= f.password_field :password_confirmation %> %>
 <% else -%>
-<%%= f.<%= attribute.field_type %>:<%= attribute.column_name %>%>
+<%%= f.<%= attribute.field_type %>:<%= attribute.column_name %> %>
 <% end -%>
-</div>
 
 <% end -%>
 <%%= f.form_group do %>
-<%%= f.submit %>%>
+<%%= f.submit %>
 <%% end %>
 <%% end %>
