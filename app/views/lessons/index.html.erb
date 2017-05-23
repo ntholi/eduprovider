@@ -18,8 +18,10 @@
       <td><%= lesson.title %></td>
       <td><%= lesson.summary %></td>
       <td><%= link_to 'Show', lesson %></td>
+      <% if current_tutor %>
       <td><%= link_to 'Edit', edit_lesson_path(lesson) %></td>
       <td><%= link_to 'Delete', lesson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      <% end %>
     </tr>
     <% end %>
   </tbody>
