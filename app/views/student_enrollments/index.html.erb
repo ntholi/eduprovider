@@ -13,7 +13,7 @@
   <tbody>
     <% @student_enrollments.each do |student_enrollment| %>
     <tr>
-      <td><%= student_enrollment.tutored_course %></td>
+      <td><%= link_to student_enrollment.tutored_course.course, student_enrollment.tutored_course.course %></td>
       <td><%= link_to 'Lessons', lessons_path(tutored_course_id: student_enrollment.tutored_course.id) %></td>
       <td><%= link_to 'Unregister', student_enrollment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
     </tr>

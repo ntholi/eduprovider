@@ -10,6 +10,7 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
+    @back_path = current_tutor ? tutored_courses_path : student_enrollments_path
   end
 
   # GET /courses/new
