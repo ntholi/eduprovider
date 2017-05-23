@@ -1,10 +1,18 @@
-class StudentsController < ApplicationController
+class StudentsController < AuthenticateTutorController
   before_action :set_student, only: [:show, :edit, :update, :destroy]
 
   # GET /students
   # GET /students.json
   def index
-    @students = Student.all
+    if params[:tutored_course_id]
+      tutored_course = TutoredCourse.find(params[:tutored_course_id])
+      @students = []
+      tutored_course.student_enrollments.each do |enrollment|
+        @students << enrollment.student
+      end
+    else
+      redirect_to tutored_courses_path
+    end
   end
 
   # GET /students/1

@@ -9,7 +9,7 @@ class LessonsController < ApplicationController
         @tutored_course = TutoredCourse.find(params[:tutored_course_id])
         @lessons = @tutored_course.lessons
       else
-        redirect_to tutor_root_path
+        redirect_to tutored_courses_path
       end
     else
       @lessons = Lesson.all
