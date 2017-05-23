@@ -7,4 +7,3 @@ scaffold video_lesson lesson:references video
 rails generate devise student user_profile:references
 scaffold student_enrollment student:references tutored_course:references
 scaffold qualification tutor:references
-scaffold course_enrolment student:references

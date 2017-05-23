@@ -7,6 +7,7 @@ Rails.application.routes.draw do
   resources :tutored_courses
   devise_for :students
   devise_for :tutors
+  resources :students
   resources :user_profiles
 
   get 'home/student_home', as: :student_root
