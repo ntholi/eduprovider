@@ -1,6 +1,6 @@
 class Lesson < ApplicationRecord
   belongs_to :tutored_course
-  has_many :video_lessons
+  has_one :video_lesson
 
   def to_s
     title

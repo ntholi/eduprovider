@@ -4,12 +4,10 @@
 </p>
 
 <p>
-  <% @lesson.video_lessons.each do |video| %>
   <video width="320" height="240" controls>
-    <source src="<%= video.video %>" type="video/mp4">
+    <source src="<%= @lesson.video_lesson.video %>" type="video/mp4">
     Your browser does not support the video tag.
   </video>
-  <% end %>
 </p>
 
 <p>
@@ -17,7 +15,7 @@
   <%= @lesson.summary %>
 </p>
 
-<% if current_tutor and !@lesson.video_lessons.first %>
+<% if current_tutor and !@lesson.video_lesson %>
 <%= link_to 'Add video content', new_video_lesson_path(lesson_id: @lesson.id ) %>
 <br/>
 <% end %>
