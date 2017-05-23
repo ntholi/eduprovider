@@ -1,8 +1,6 @@
-<p id="notice"><%%= notice %></p>
-
 <h1><%= plural_table_name.titleize %></h1>
 
-<table>
+<table class="table">
   <thead>
     <tr>
 <% attributes.reject(&:password_digest?).each do |attribute| -%>
@@ -20,7 +18,7 @@
 <% end -%>
         <td><%%= link_to 'Show', <%= singular_table_name %> %></td>
         <td><%%= link_to 'Edit', edit_<%= singular_table_name %>_path(<%= singular_table_name %>) %></td>
-        <td><%%= link_to 'Destroy', <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%%= link_to 'Delete', <%= singular_table_name %>, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <%% end %>
   </tbody>
