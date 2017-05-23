@@ -4,19 +4,18 @@
 </p>
 
 <p>
+  <% if @lesson.video_lesson %>
   <video width="320" height="240" controls>
-    <source src="<%= @lesson.video_lesson.video %>" type="video/mp4">
+    <source src="<%= @lesson.video_lesson.video%>" type="video/mp4">
     Your browser does not support the video tag.
   </video>
+  <% elsif current_tutor %>
+  <%= link_to 'Add video', new_video_lesson_path(lesson_id: @lesson.id ) %>
+  <% end %>
 </p>
 
 <p>
   <strong>Summary:</strong>
   <%= @lesson.summary %>
 </p>
-
-<% if current_tutor and !@lesson.video_lesson %>
-<%= link_to 'Add video content', new_video_lesson_path(lesson_id: @lesson.id ) %>
-<br/>
-<% end %>
 <%= link_to 'Update', edit_lesson_path(@lesson) if current_tutor %>

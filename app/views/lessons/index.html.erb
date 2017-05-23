@@ -18,7 +18,9 @@
   <tbody>
     <% @lessons.each do |lesson| %>
     <tr>
-      <td><%= image_tag(lesson.video_lesson.video.thumb) if lesson.video_lesson and current_student %></td>
+      <% if lesson.video_lesson and current_student %>
+      <td><%= image_tag(lesson.video_lesson.video.thumb) %></td>
+      <% end %>
       <td><%= lesson.title %></td>
       <td><%= lesson.summary %></td>
       <td><%= link_to 'Show', lesson %></td>
