@@ -6,8 +6,9 @@ class LessonsController < ApplicationController
   def index
     if current_tutor
       if params[:tutored_course]
-        @tutored_course = TutoredCourse.find(params[:tutored_course])
-        @lessons = @tutored_course.lessons
+        tutored_course = TutoredCourse.find(params[:tutored_course])
+        session[:tutored_course_id] = tutored_course.id
+        @lessons = tutored_course.lessons
       else
         redirect_to tutored_courses_path
       end
@@ -24,6 +25,7 @@ class LessonsController < ApplicationController
   # GET /lessons/new
   def new
     @lesson = Lesson.new
+    @tutored_course = TutoredCourse.find(session[:tutored_course_id])
   end
 
   # GET /lessons/1/edit
@@ -34,7 +36,7 @@ class LessonsController < ApplicationController
   # POST /lessons.json
   def create
     @lesson = Lesson.new(lesson_params)
-
+    @lesson.tutored_course = TutoredCourse.find(session[:tutored_course_id])
     respond_to do |format|
       if @lesson.save
         format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }

@@ -1,10 +1,12 @@
-<%= bootstrap_form_for(lesson, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |form| %>
+<%= bootstrap_form_for(lesson, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
 
-<%= form.collection_select :tutored_course_id, current_tutor.tutored_courses, :id, :to_s %>
-<%= form.text_field :title, id: :lesson_title %>
-<%= form.text_area :summary, id: :lesson_summary %>
+<%= f.static_control label: "Course" do %>
+<%= @tutored_course %>
+<% end %>
+<%= f.text_field :title %>
+<%= f.text_area :summary %>
 
-<%= form.form_group do %>
-<%= form.submit %>
+<%= f.form_group do %>
+<%= f.submit %>
 <% end %>
 <% end %>
