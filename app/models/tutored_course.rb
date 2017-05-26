@@ -7,4 +7,8 @@ class TutoredCourse < ApplicationRecord
   def to_s
     course.to_s
   end
+
+  def name_with_tutor
+    "#{course.name} (with #{tutor})"
+  end
 end

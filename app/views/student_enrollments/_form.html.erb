@@ -1,6 +1,6 @@
 <%= bootstrap_form_for(student_enrollment, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
 
-<%= f.collection_select :tutored_course_id, TutoredCourse.all, :id, :to_s %>
+<%= f.collection_select :tutored_course_id, TutoredCourse.all, :id, :name_with_tutor %>
 
 <%= f.form_group do %>
 <%= f.submit 'Enroll' %>
