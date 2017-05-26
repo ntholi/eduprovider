@@ -20,7 +20,7 @@
   <strong>Summary:</strong>
   <%= @lesson.summary %>
 </p>
-<% if current_tutor and (@lesson.video_lesson or @lesson.audio_lesson) %>
+<% if current_tutor and !(@lesson.video_lesson or @lesson.audio_lesson) %>
 <%= link_to 'Add video', new_video_lesson_path(lesson_id: @lesson.id ) %>
 <br/>
 <%= link_to 'Add Audio', new_audio_lesson_path(lesson_id: @lesson.id ) %>
