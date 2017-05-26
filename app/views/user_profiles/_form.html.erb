@@ -1,26 +1,14 @@
-<%= bootstrap_form_for(user_profile, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |form| %>
-<% if user_profile.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(user_profile.errors.count, "error") %>
-    prohibited this user_profile from being saved:</h2>
+<%= bootstrap_form_for(user_profile, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
 
-  <ul>
-    <% user_profile.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
-
-<%= form.text_field :email, id: :user_profile_email %>
-<%= form.text_field :first_name, id: :user_profile_first_name %>
-<%= form.text_field :last_name, id: :user_profile_last_name %>
-<%= form.date_select :date_of_birth, id: :user_profile_date_of_birth %>
-<%= form.text_field :area_name, id: :user_profile_area_name %>
-<%= form.text_field :city, id: :user_profile_city %>
-<%= form.text_field :country, id: :user_profile_country %>
-<%= form.text_field :phone_number, id: :user_profile_phone_number %>
-<%= form.form_group do %>
-<%= form.submit %>
+<%= f.text_field :email %>
+<%= f.text_field :first_name %>
+<%= f.text_field :last_name %>
+<%= f.date_select :date_of_birth, start_year: 1901 %>
+<%= f.text_field :country %>
+<%= f.text_field :city %>
+<%= f.text_field :area_name %>
+<%= f.text_field :phone_number %>
+<%= f.form_group do %>
+<%= f.submit %>
 <% end %>
 <% end %>
