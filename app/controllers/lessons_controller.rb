@@ -6,7 +6,7 @@ class LessonsController < ApplicationController
   def index
     if current_tutor
       if params[:tutored_course_id]
-        @tutored_course = TutoredCourse.find(params[:tutored_course_id])
+        @tutored_course = TutoredCourse.find(params[:tutored_course])
         @lessons = @tutored_course.lessons
       else
         redirect_to tutored_courses_path
