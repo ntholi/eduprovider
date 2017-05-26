@@ -3,20 +3,27 @@
   (<%= @lesson.tutored_course.course %>)
 </p>
 
+<% if @lesson.video_lesson %>
 <p>
-  <% if @lesson.video_lesson %>
   <video width="320" height="240" controls>
     <source src="<%= @lesson.video_lesson.video%>" type="video/mp4">
     Your browser does not support the video tag.
   </video>
 </p>
+<% elsif @lesson.audio_lesson %>
+<audio id="soundtrack" controls preload="auto">
+  <source src="<%= @lesson.audio_lesson.audio%>" type="audio/mp3">
+</audio>
+<% end %>
 
 <p>
   <strong>Summary:</strong>
   <%= @lesson.summary %>
 </p>
-<% elsif current_tutor %>
+<% if current_tutor and (@lesson.video_lesson or @lesson.audio_lesson) %>
 <%= link_to 'Add video', new_video_lesson_path(lesson_id: @lesson.id ) %>
+<br/>
+<%= link_to 'Add Audio', new_audio_lesson_path(lesson_id: @lesson.id ) %>
 <br/><br/>
 <% end %>
 <%= link_to 'Back', lessons_path %>

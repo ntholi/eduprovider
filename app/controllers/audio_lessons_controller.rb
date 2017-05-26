@@ -15,6 +15,7 @@ class AudioLessonsController < ApplicationController
   # GET /audio_lessons/new
   def new
     @audio_lesson = AudioLesson.new
+    @audio_lesson.lesson = Lesson.find(params[:lesson_id])
   end
 
   # GET /audio_lessons/1/edit

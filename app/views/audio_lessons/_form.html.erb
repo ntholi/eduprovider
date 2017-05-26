@@ -1,7 +1,7 @@
 <%= bootstrap_form_for(audio_lesson, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
 
 <%= f.hidden_field :lesson_id %>
-<%= f.text_field :audio %>
+<%= f.file_field :audio %>
 
 <%= f.form_group do %>
 <%= f.submit %>
