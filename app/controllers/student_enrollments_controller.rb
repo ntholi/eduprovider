@@ -28,7 +28,7 @@ class StudentEnrollmentsController < ApplicationController
     @student_enrollment.student = current_student
     respond_to do |format|
       if @student_enrollment.save
-        format.html { redirect_to @student_enrollment, notice: 'You have enrolled successfully' }
+        format.html { redirect_to student_enrollments_path, notice: 'You have enrolled successfully' }
         format.json { render :show, status: :created, location: @student_enrollment }
       else
         format.html { render :new }
@@ -56,7 +56,7 @@ class StudentEnrollmentsController < ApplicationController
   def destroy
     @student_enrollment.destroy
     respond_to do |format|
-      format.html { redirect_to student_enrollments_url, notice: 'Student enrollment was successfully destroyed.' }
+      format.html { redirect_to student_enrollments_url, notice: 'Unregistered successfully' }
       format.json { head :no_content }
     end
   end

@@ -1,23 +1,8 @@
-<%= form_with(model: student_enrollment, local: true) do |form| %>
-<% if student_enrollment.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(student_enrollment.errors.count, "error") %>
-    prohibited this student_enrollment from being saved:</h2>
+<%= bootstrap_form_for(student_enrollment, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
 
-  <ul>
-    <% student_enrollment.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-</div>
+<%= f.collection_select :tutored_course_id, TutoredCourse.all, :id, :to_s %>
+
+<%= f.form_group do %>
+<%= f.submit 'Enroll' %>
 <% end %>
-
-<div class="field">
-  <%= form.label :tutored_course_id %>
-  <%= form.collection_select :tutored_course_id, TutoredCourse.all, :id, :to_s %>
-</div>
-
-<div class="actions">
-  <%= form.submit %>
-</div>
 <% end %>
