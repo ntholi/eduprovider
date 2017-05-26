@@ -107,7 +107,10 @@ ActiveRecord::Schema.define(version: 20170522121533) do
 
   create_table "video_lessons", force: :cascade do |t|
     t.integer "lesson_id"
-    t.string "video"
+    t.string "video_file_name"
+    t.string "video_content_type"
+    t.integer "video_file_size"
+    t.datetime "video_updated_at"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["lesson_id"], name: "index_video_lessons_on_lesson_id"
