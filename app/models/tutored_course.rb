@@ -1,7 +1,7 @@
 class TutoredCourse < ApplicationRecord
   belongs_to :tutor
   belongs_to :course
-  has_many :lessons, :dependent => :delete_all
+  has_many :lessons, :dependent => :destroy
   has_many :student_enrollments
 
   def to_s
