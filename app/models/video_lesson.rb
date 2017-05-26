@@ -1,6 +1,6 @@
 class VideoLesson < ApplicationRecord
   belongs_to :lesson
-  
+
   has_attached_file :video, styles: {
     :medium => {
       :geometry => "640x480",
@@ -9,4 +9,6 @@ class VideoLesson < ApplicationRecord
     :thumb => { :geometry => "160x120", :format => 'jpeg', :time => 10}
     }, :processors => [:transcoder]
     validates_attachment_content_type :video, content_type: /\Avideo\/.*\Z/
+
+    process_in_background :video
 end
