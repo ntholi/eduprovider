@@ -5,7 +5,7 @@ class LessonsController < ApplicationController
   # GET /lessons.json
   def index
     if current_tutor
-      if params[:tutored_course_id]
+      if params[:tutored_course]
         @tutored_course = TutoredCourse.find(params[:tutored_course])
         @lessons = @tutored_course.lessons
       else

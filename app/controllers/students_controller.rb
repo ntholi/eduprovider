@@ -4,7 +4,7 @@ class StudentsController < AuthenticateTutorController
   # GET /students
   # GET /students.json
   def index
-    if params[:tutored_course_id]
+    if params[:tutored_course]
       tutored_course = TutoredCourse.find(params[:tutored_course])
       @students = []
       tutored_course.student_enrollments.each do |enrollment|
