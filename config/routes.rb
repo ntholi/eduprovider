@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  resources :audio_lessons
   resources :student_enrollments
   resources :video_lessons
   resources :lessons

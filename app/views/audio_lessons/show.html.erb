@@ -1,0 +1,12 @@
+<p>
+  <strong>Lesson:</strong>
+  <%= @audio_lesson.lesson %>
+</p>
+
+<p>
+  <strong>Audio:</strong>
+  <%= @audio_lesson.audio %>
+</p>
+
+<%= link_to 'Edit', edit_audio_lesson_path(@audio_lesson) %> |
+<%= link_to 'Back', audio_lessons_path %>

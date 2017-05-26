@@ -10,7 +10,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170522121533) do
+ActiveRecord::Schema.define(version: 20170526122659) do
+
+  create_table "audio_lessons", force: :cascade do |t|
+    t.integer "lesson_id"
+    t.string "audio_file_name"
+    t.string "audio_content_type"
+    t.integer "audio_file_size"
+    t.datetime "audio_updated_at"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["lesson_id"], name: "index_audio_lessons_on_lesson_id"
+  end
 
   create_table "courses", force: :cascade do |t|
     t.string "code"

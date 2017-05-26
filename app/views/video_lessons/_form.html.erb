@@ -1,16 +1,4 @@
 <%= bootstrap_form_for(video_lesson, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
-<% if video_lesson.errors.any? %>
-<div id="error_explanation">
-  <h2><%= pluralize(video_lesson.errors.count, "error") %>
-    prohibited this video_lesson from being saved:</h2>
-
-  <ul>
-    <% video_lesson.errors.full_messages.each do |message| %>
-    <li><%= message %></li>
-    <% end %>
-  </ul>
-</div>
-<% end %>
 
 <%= f.hidden_field :lesson_id %>
 <%= f.file_field :video %>
