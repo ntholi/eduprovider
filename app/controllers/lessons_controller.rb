@@ -32,6 +32,7 @@ class LessonsController < ApplicationController
 
   # GET /lessons/1/edit
   def edit
+    @tutored_course = TutoredCourse.find(session[:tutored_course_id])
   end
 
   # POST /lessons
