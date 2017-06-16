@@ -1,0 +1,22 @@
+<p>
+  <strong>Title:</strong>
+  <%= @question.title %>
+</p>
+
+<p>
+  <strong>Content:</strong>
+  <%= @question.content %>
+</p>
+
+<p>
+  <strong>Student:</strong>
+  <%= @question.student %>
+</p>
+
+<p>
+  <strong>Lesson:</strong>
+  <%= @question.lesson %>
+</p>
+
+<%= link_to 'Edit', edit_question_path(@question) %> |
+<%= link_to 'Back', questions_path %>
