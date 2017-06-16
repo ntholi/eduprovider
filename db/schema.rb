@@ -10,7 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170616110724) do
+ActiveRecord::Schema.define(version: 20170616130516) do
+
+  create_table "answers", force: :cascade do |t|
+    t.text "content"
+    t.integer "tutor_id"
+    t.integer "question_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["question_id"], name: "index_answers_on_question_id"
+    t.index ["tutor_id"], name: "index_answers_on_tutor_id"
+  end
 
   create_table "audio_lessons", force: :cascade do |t|
     t.integer "lesson_id"

@@ -9,3 +9,4 @@ scaffold student_enrollment student:references tutored_course:references
 scaffold qualification tutor:references
 
 scaffold question title content:text student:references lesson:references
+scaffold answer content:text tutor:references question:references
