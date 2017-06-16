@@ -13,19 +13,15 @@
 
   <tbody>
     <% @questions.each do |question| %>
-      <tr>
-        <td><%= question.title %></td>
-        <td><%= question.content %></td>
-        <td><%= question.student %></td>
-        <td><%= question.lesson %></td>
-        <td><%= link_to 'Show', question %></td>
-        <td><%= link_to 'Edit', edit_question_path(question) %></td>
-        <td><%= link_to 'Delete', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
+    <tr>
+      <td><%= question.title %></td>
+      <td><%= question.content %></td>
+      <td><%= question.student %></td>
+      <td><%= question.lesson %></td>
+      <td><%= link_to 'Show', question %></td>
+      <td><%= link_to 'Edit', edit_question_path(question) %></td>
+      <td><%= link_to 'Delete', question, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+    </tr>
     <% end %>
   </tbody>
 </table>
-
-<br>
-
-<%= link_to 'New Question', new_question_path %>
