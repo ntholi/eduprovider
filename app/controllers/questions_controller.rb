@@ -15,6 +15,8 @@ class QuestionsController < ApplicationController
   # GET /questions/new
   def new
     @question = Question.new
+    @question.lesson = Lesson.find(params[:lesson_id])
+    @question.student = current_student
   end
 
   # GET /questions/1/edit

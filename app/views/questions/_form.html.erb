@@ -1,9 +1,9 @@
 <%= bootstrap_form_for(question, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
 
-<%= f.text_field:title %>
-<%= f.text_area:content %>
-<%= f.text_field:student_id %>
-<%= f.text_field:lesson_id %>
+<%= f.text_field :title %>
+<%= f.text_area :content %>
+<%= f.hidden_field :student_id %>
+<%= f.hidden_field :lesson_id %>
 
 <%= f.form_group do %>
 <%= f.submit %>
