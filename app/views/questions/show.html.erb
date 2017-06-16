@@ -8,4 +8,8 @@
   <%= @question.content %>
 </p>
 
-<%= link_to 'Edit', edit_question_path(@question) %>
+<%= link_to 'Update', edit_question_path(@question) %>
+
+<%= render 'answers/form' %>
+
+<%= render @question.answers %>

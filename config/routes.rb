@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
 
-  resources :answers
-  resources :questions
+  resources :questions do
+    resources :answers, only: [:create, :edit, :update, :destroy]
+  end
   resources :audio_lessons
   resources :student_enrollments
   resources :video_lessons
