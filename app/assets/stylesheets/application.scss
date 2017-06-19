@@ -17,4 +17,15 @@
 @import 'bootstrap';
 @import 'rails_bootstrap_forms';
 @import 'flash_messages';
-@import 'trix'
+@import 'trix';
+
+$gray_500: #9E9E9E;
+
+.course-box{
+  border: $gray_500 1px solid;
+  padding: 20px;
+
+  .course-box-menu {
+    float: right; 
+  }
+}

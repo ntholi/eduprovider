@@ -1,24 +1,13 @@
 <h1>My Enrollments</h1>
 
-<table class="table">
-  <thead>
-    <tr>
-      <th>Tutored course</th>
-      <th colspan="2"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @student_enrollments.each do |student_enrollment| %>
-    <tr>
-      <td><%= link_to student_enrollment.tutored_course.name_with_tutor, student_enrollment.tutored_course.course %></td>
-      <td><%= link_to 'Lessons', lessons_path(tutored_course_id: student_enrollment.tutored_course.id) %></td>
-      <td><%= link_to 'Unregister', student_enrollment, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-    </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
-
 <%= link_to 'New Enrollment', new_student_enrollment_path %>
+
+<article class="course-box">
+  <% @student_enrollments.each do |student_enrollment| %>
+  <%= link_to student_enrollment.tutored_course.name_with_tutor, student_enrollment.tutored_course.course %>
+  <div class="course-box-menu">
+    <%= link_to 'Lessons', lessons_path(tutored_course_id: student_enrollment.tutored_course.id) %>
+    <%= link_to 'Unregister', student_enrollment, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+  <% end %>
+</article>
