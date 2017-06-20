@@ -1,18 +1,22 @@
-<%= link_to @question.lesson, @question.lesson %>
-
-<p>
-  <strong><%= @question.title %></strong>
-</p>
-<p>
-  Privacy
-  <strong><%= @question.privacy %></strong>
-</p>
-<p>
+<header id="question-header">
+  <h1><%= @question.title %></h1>
+  Lesson:
+  <%= link_to @question.lesson, @question.lesson %>
+</header>
+<section id="question-content">
   <%= @question.content %>
-</p>
+  <% if current_student and @question.student == current_student %>
+  <%= link_to 'Edit', edit_question_path(@question) %>
+  <% end %>
+</section>
 
-<%= link_to 'Update', edit_question_path(@question) %>
+<section id="answers">
+  <header>Answers</header>
+  <div class="row">
+    <%= render @question.answers %>
+  </div>
+</section>
 
+<% if current_tutor %>
 <%= render 'answers/form' %>
-
-<%= render @question.answers %>
+<% end %>

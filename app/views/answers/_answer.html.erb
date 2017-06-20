@@ -1,5 +1,12 @@
-<strong>
-  <%= answer.tutor %></strong>
-<p>
-  <%= answer.content %>
-</p>
+<div class="col-sm-1">
+  <%= link_to "#" do %>
+  <i class="glyphicon glyphicon-ok"></i>
+  <% end %>
+</div>
+<div class="col-sm-11">
+  <p>
+    <%= answer.content %>
+  </p>
+  by
+  <%= answer.tutor %>
+</div>

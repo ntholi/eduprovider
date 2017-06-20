@@ -1,8 +1,8 @@
 <%= bootstrap_form_for([@question, @question.answers.new]) do |f| %>
 
-<%= f.text_area :content %>
+<%= f.text_area :content, label: 'Your answer' %>
 
 <%= f.form_group do %>
-<%= f.submit %>
+<%= f.submit 'Post' %>
 <% end %>
 <% end %>
