@@ -43,6 +43,25 @@ a {
   }
 }
 
+.question {
+  border-bottom: 1px solid $gray_300;
+  padding: 20px 0;
+  p {
+    font-size: 1.2em;
+  }
+  .actions{
+    float: right;
+  }
+  .question-lesson{
+    display: block;
+  }
+  .question-by{
+    clear: both;
+    display: block;
+    float: right;
+  }
+}
+
 #question-header{
   border-bottom: 1px solid $gray_300;
   padding-bottom: 10px;
