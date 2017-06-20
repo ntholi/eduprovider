@@ -2,11 +2,12 @@
 
 <%= link_to 'New Enrollment', new_student_enrollment_path %>
 <br/><br/>
+
+<% @student_enrollments.each do |student_enrollment| %>
 <article class="course-box">
-  <% @student_enrollments.each do |student_enrollment| %>
   <%= link_to student_enrollment, student_enrollment %>
   <div class="course-box-menu">
     <%= link_to 'Unregister', student_enrollment, method: :delete, data: { confirm: 'Are you sure?' } %>
   </div>
-  <% end %>
 </article>
+<% end %>
