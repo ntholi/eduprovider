@@ -5,9 +5,12 @@
 
 <% @student_enrollments.each do |student_enrollment| %>
 <article class="course-box">
-  <%= link_to student_enrollment, student_enrollment %>
+  <%= link_to student_enrollment, student_enrollment, class: 'course-name' %>
   <div class="course-box-menu">
     <%= link_to 'Unregister', student_enrollment, method: :delete, data: { confirm: 'Are you sure?' } %>
+  </div>
+  <div class="course-tutor">
+    <%= student_enrollment.tutor %>
   </div>
 </article>
 <% end %>

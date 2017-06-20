@@ -35,9 +35,15 @@ a {
 }
 .course-box{
   border: $gray_300 1px solid;
-  padding: 20px;
+  padding: 30px;
   margin-bottom: 10px;
 
+  .course-name{
+    font-size: 1.3em;
+  }
+  .course-tutor{
+    font-size: 0.9em;
+  }
   .course-box-menu {
     float: right;
   }
