@@ -1,3 +1,38 @@
+<% content_for :section_menu do %>
+<li>
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Video<span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <% if current_tutor and !(@lesson.video_lesson) %>
+      <li>
+        <%= link_to 'Upload video', new_video_lesson_path(lesson_id: @lesson.id ) %>
+      </li>
+      <li>
+        <a href="#">Record</a>
+      </li>
+      <% end %>
+    </ul>
+  </li>
+</li>
+<li>
+  <li class="dropdown">
+    <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Audio<span class="caret"></span>
+    </a>
+    <ul class="dropdown-menu">
+      <% if current_tutor and !(@lesson.audio_lesson) %>
+      <li>
+        <%= link_to 'Upload Audio', new_audio_lesson_path(lesson_id: @lesson.id ) %>
+      </li>
+      <li>
+        <a href="#">Record</a>
+      </li>
+      <% end %>
+    </ul>
+  </li>
+</li>
+<% end %>
+
 <p>
   <strong><%= @lesson.title %></strong>
   (<%= @lesson.tutored_course.course %>)
@@ -18,15 +53,7 @@
   <br/>
   <%= @lesson.summary %>
 </p>
-<% if current_tutor and !(@lesson.video_lesson or @lesson.audio_lesson) %>
-<%= link_to 'Add video', new_video_lesson_path(lesson_id: @lesson.id ) %>
-<br/>
-<%= link_to 'Add Audio', new_audio_lesson_path(lesson_id: @lesson.id ) %>
-<br/><br/>
-<% end %>
 
 <%= link_to "Questions (#{questions_count @lesson})", questions_path(lesson_id: @lesson.id)%>
 <br/>
 <%= link_to 'Update', edit_lesson_path(@lesson) if current_tutor %>
-<br/>
-<%= link_to 'Back', lessons_path %>

@@ -29,7 +29,7 @@ class AudioLessonsController < ApplicationController
 
     respond_to do |format|
       if @audio_lesson.save
-        format.html { redirect_to @audio_lesson, notice: 'Audio lesson was successfully created.' }
+        format.html { redirect_to @audio_lesson.lesson, notice: 'Audio lesson was successfully created.' }
         format.json { render :show, status: :created, location: @audio_lesson }
       else
         format.html { render :new }

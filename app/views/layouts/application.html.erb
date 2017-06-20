@@ -33,6 +33,7 @@
             <% elsif current_tutor  %>
             <li><%= link_to 'Home', tutor_root_path %></li>
             <li><%= link_to 'Courses', tutored_courses_path %></li>
+            <%= yield :section_menu %>
             <% elsif current_student %>
             <li><%= link_to 'Home', student_root_path %></li>
             <li>

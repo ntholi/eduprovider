@@ -29,7 +29,7 @@ class VideoLessonsController < ApplicationController
 
     respond_to do |format|
       if @video_lesson.save
-        format.html { redirect_to @video_lesson, notice: 'Video lesson was successfully created.' }
+        format.html { redirect_to @video_lesson.lesson, notice: 'Video lesson was successfully created.' }
         format.json { render :show, status: :created, location: @video_lesson }
       else
         format.html { render :new }
