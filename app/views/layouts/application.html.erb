@@ -33,7 +33,6 @@
             <% elsif current_tutor  %>
             <li><%= link_to 'Home', tutor_root_path %></li>
             <li><%= link_to 'Courses', tutored_courses_path %></li>
-            <%= yield :section_menu %>
             <% elsif current_student %>
             <li><%= link_to 'Home', student_root_path %></li>
             <li>
@@ -57,7 +56,12 @@
 
     <div class="container">
       <main class="row">
-        <div class="col-md-12">
+        <div class="col-sm-2">
+
+          <%= yield :section_nav %>
+
+        </div>
+        <div class="col-sm-10">
           <% flash.each do |name, msg| %>
           <div id="flash" class='alert alert-<%= "#{name}" %>'>
             <a href="#" class="close" data-dismiss='alert'>&#215;</a>
