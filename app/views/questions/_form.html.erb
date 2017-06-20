@@ -1,6 +1,7 @@
 <%= bootstrap_form_for(question, layout: :horizontal, label_col: "col-sm-2", control_col: "col-sm-10") do |f| %>
 
 <%= f.text_field :title %>
+<%= f.select :privacy, ['Private', 'Public'], { label: 'Privacy'}, { class: "selectpicker" } %>
 <%= f.text_area :content %>
 <%= f.hidden_field :student_id %>
 <%= f.hidden_field :lesson_id %>
