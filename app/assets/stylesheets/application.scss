@@ -19,13 +19,13 @@
 @import 'flash_messages';
 @import 'trix';
 
-$gray_500: #9E9E9E;
+$gray_300: #E0E0E0;
 
 .course-box{
-  border: $gray_500 1px solid;
+  border: $gray_300 1px solid;
   padding: 20px;
 
   .course-box-menu {
-    float: right; 
+    float: right;
   }
 }

@@ -1,11 +1,8 @@
-<p>
-  <strong>Student:</strong>
-  <%= @student_enrollment.student %>
-</p>
+<%= @student_enrollment.tutored_course %>
 
 <p>
-  <strong>Tutored course:</strong>
-  <%= @student_enrollment.tutored_course %>
+  by
+  <strong><%= @student_enrollment.tutored_course.tutor %></strong>
 </p>
 
-<%= link_to 'Back', student_enrollments_path %>
+<%= link_to 'Lessons', lessons_path(tutored_course_id: @student_enrollment.tutored_course.id) %>
