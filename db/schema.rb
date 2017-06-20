@@ -55,6 +55,8 @@ ActiveRecord::Schema.define(version: 20170616130516) do
   create_table "questions", force: :cascade do |t|
     t.string "title"
     t.text "content"
+    t.boolean "answered"
+    t.integer "privacy"
     t.integer "student_id"
     t.integer "lesson_id"
     t.datetime "created_at", null: false
