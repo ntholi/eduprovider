@@ -6,8 +6,8 @@ class QuestionsController < ApplicationController
   def index
     @questions = []
     if params[:lesson_id]
-      lesson = Lesson.find(params[:lesson_id])
-      @questions = Question.where(lesson: lesson)
+      @lesson = Lesson.find(params[:lesson_id])
+      @questions = Question.where(lesson: @lesson)
     end
   end
 

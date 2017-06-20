@@ -8,7 +8,6 @@
     <tr>
       <th>Title</th>
       <th>Summary</th>
-      <th>Questions</th>
       <th></th>
     </tr>
   </thead>
@@ -18,9 +17,6 @@
     <tr>
       <td><%= link_to "#{lesson.title.capitalize}", lesson_path(lesson) %></td>
       <td><%= lesson.summary %></td>
-      <td>
-        <%= link_to "Questions (#{questions_count lesson})", questions_path(lesson_id: lesson.id)%>
-      </td>
       <% if current_tutor %>
       <td><%= link_to 'Delete', lesson, method: :delete, data: { confirm: 'Are you sure?' } %></td>
       <% end %>
