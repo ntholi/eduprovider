@@ -1,3 +1,16 @@
+<% content_for :section_nav do %>
+<nav id="side-nav">
+  <ul>
+    <li id="nav-title">
+      Tutored Courses
+    </li>
+    <li>
+      <%= link_to 'Register new Course', new_tutored_course_path %>
+    </li>
+  </ul>
+</nav>
+<% end %>
+
 <h1>Tutored Courses</h1>
 
 <table class="table">
@@ -19,6 +32,3 @@
     <% end %>
   </tbody>
 </table>
-
-<br>
-<%= link_to 'Register for New Course', new_tutored_course_path %>

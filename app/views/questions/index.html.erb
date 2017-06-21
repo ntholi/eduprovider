@@ -1,5 +1,17 @@
+<% content_for :section_nav do %>
+<nav id="side-nav">
+  <ul>
+    <li id="nav-title">
+      Questions
+    </li>
+    <li>
+      <%= link_to 'Ask Question', new_question_path(lesson_id: @lesson.id) %>
+    </li>
+  </ul>
+</nav>
+<% end %>
+
 <h1>Questions</h1>
-<%= link_to 'Ask Question', new_question_path(lesson_id: @lesson.id) %>
 
 <% @questions.each do |question| %>
 <div class="question">
