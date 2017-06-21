@@ -1,19 +1,25 @@
 <% content_for :section_nav do %>
-<nav>
+<nav id="side-nav">
   <ul>
     <% if current_tutor and !(@lesson.video_lesson) %>
     <li>
+      Video
+    </li>
+    <li class="inner-nav">
       <%= link_to 'Upload video', new_video_lesson_path(lesson_id: @lesson.id ) %>
     </li>
-    <li>
+    <li class="inner-nav">
       <a href="#">Record</a>
     </li>
     <% end %>
     <% if current_tutor and !(@lesson.audio_lesson) %>
     <li>
+      Audio
+    </li>
+    <li class="inner-nav">
       <%= link_to 'Upload Audio', new_audio_lesson_path(lesson_id: @lesson.id ) %>
     </li>
-    <li>
+    <li class="inner-nav">
       <a href="#">Record</a>
     </li>
     <% end %>
