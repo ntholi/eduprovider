@@ -1,28 +1,15 @@
 <% content_for :section_nav do %>
 <nav id="side-nav">
   <ul>
-    <% if current_tutor and !(@lesson.video_lesson) %>
     <li>
-      Video
+      Lesson
     </li>
-    <li class="inner-nav">
-      <%= link_to 'Upload video', new_video_lesson_path(lesson_id: @lesson.id ) %>
-    </li>
-    <li class="inner-nav">
-      <a href="#">Record</a>
-    </li>
-    <% end %>
-    <% if current_tutor and !(@lesson.audio_lesson) %>
     <li>
-      Audio
+      <%= link_to "Questions (#{questions_count @lesson})", questions_path(lesson_id: @lesson.id)%>
     </li>
-    <li class="inner-nav">
-      <%= link_to 'Upload Audio', new_audio_lesson_path(lesson_id: @lesson.id ) %>
+    <li>
+      <%= link_to 'Update Lesson', edit_lesson_path(@lesson) if current_tutor %>
     </li>
-    <li class="inner-nav">
-      <a href="#">Record</a>
-    </li>
-    <% end %>
   </ul>
 </nav>
 <% end %>
@@ -47,7 +34,10 @@
   <br/>
   <%= @lesson.summary %>
 </p>
-
-<%= link_to "Questions (#{questions_count @lesson})", questions_path(lesson_id: @lesson.id)%>
-<br/>
-<%= link_to 'Update', edit_lesson_path(@lesson) if current_tutor %>
+<% if current_tutor and !(@lesson.video_lesson) %>
+<%= link_to 'Upload video', new_video_lesson_path(lesson_id: @lesson.id ) %>
+<% end %>
+<% if current_tutor and !(@lesson.audio_lesson) %>
+<%= link_to 'Upload Audio', new_audio_lesson_path(lesson_id: @lesson.id ) %>
+<% end %>
+</ul>
