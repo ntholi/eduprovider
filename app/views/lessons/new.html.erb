@@ -1,5 +1,16 @@
+<% content_for :section_nav do %>
+<nav id="side-nav">
+  <ul>
+    <li id="nav-title">
+      Lessons
+    </li>
+    <li>
+      <%= link_to 'Back', lessons_path %>
+    </li>
+  </ul>
+</nav>
+<% end %>
+
 <h1>New Lesson</h1>
 
 <%= render 'form', lesson: @lesson %>
-
-<%= link_to 'Back', lessons_path %>

@@ -10,6 +10,9 @@
     <li>
       <%= link_to 'Update Lesson', edit_lesson_path(@lesson) if current_tutor %>
     </li>
+    <li>
+      <%= link_to 'Back', lessons_path %>
+    </li>
   </ul>
 </nav>
 <% end %>

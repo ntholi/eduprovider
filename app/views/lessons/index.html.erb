@@ -1,3 +1,16 @@
+<% content_for :section_nav do %>
+<nav id="side-nav">
+  <ul>
+    <li id="nav-title">
+      Lessons
+    </li>
+    <li>
+      <%= link_to 'New Lesson', new_lesson_path if current_tutor %>
+    </li>
+  </ul>
+</nav>
+<% end %>
+
 <h1><%= @lessons.first.tutored_course if @lessons and @lessons.first %>
   Lessons</h1>
 <br/>
@@ -26,5 +39,3 @@
 </table>
 <% end %>
 <br>
-
-<%= link_to 'New Lesson', new_lesson_path if current_tutor %>
