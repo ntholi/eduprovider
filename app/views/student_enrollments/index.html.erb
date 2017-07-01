@@ -1,7 +1,17 @@
-<h1>My Enrollments</h1>
+<% content_for :section_nav do %>
+<nav id="side-nav">
+  <ul>
+    <li id="nav-title">
+      Enrollments
+    </li>
+    <li>
+      <%= link_to 'New Enrollment', new_student_enrollment_path %>
+    </li>
+  </ul>
+</nav>
+<% end %>
 
-<%= link_to 'New Enrollment', new_student_enrollment_path %>
-<br/><br/>
+<h1>My Enrollments</h1>
 
 <% @student_enrollments.each do |student_enrollment| %>
 <article class="course-box">

@@ -1,12 +1,23 @@
+<% content_for :section_nav do %>
+<nav id="side-nav">
+  <ul>
+    <li id="nav-title">
+      Enrollments
+    </li>
+    <li>
+      <%= link_to 'Lessons', lessons_path(tutored_course_id: @student_enrollment.tutored_course.id) %>
+    </li>
+  </ul>
+</nav>
+<% end %>
+
 <h1><%= @student_enrollment.tutored_course %></h1>
 
 <p>
-  by
+  with
   <strong><%= @student_enrollment.tutored_course.tutor %></strong>
 </p>
 
 <p>
   <%= @student_enrollment.tutored_course.course.description %>
 </p>
-
-<%= link_to 'Lessons', lessons_path(tutored_course_id: @student_enrollment.tutored_course.id) %>
