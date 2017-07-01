@@ -1,3 +1,15 @@
+<% content_for :section_nav do %>
+<nav id="side-nav">
+  <ul>
+    <li id="nav-title">
+      Courses
+    </li>
+    <li>
+      <%= link_to 'Back', @back_path %>
+    </li>
+  </ul>
+</nav>
+<% end %>
 <h1><%= @course %></h1>
 <br/>
 <p>
@@ -24,5 +36,3 @@
   <strong>Price:</strong>
   <%= @course.price %>
 </p>
-
-<%= link_to 'Back', @back_path %>

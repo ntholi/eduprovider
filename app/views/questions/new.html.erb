@@ -1,5 +1,18 @@
-<h1>New Question</h1>
+<% content_for :section_nav do %>
+<nav id="side-nav">
+  <ul>
+    <li id="nav-title">
+      Questions
+    </li>
+    <li>
+      <%= link_to 'Back', questions_path(lesson_id: @question.lesson.id) %>
+    </li>
+  </ul>
+</nav>
+<% end %>
 
+<h1>Question</h1>
+<p>
+  Ask a question on '<%= @question.lesson %>' lesson
+</p>
 <%= render 'form', question: @question %>
-
-<%= link_to 'Back', questions_path %>
