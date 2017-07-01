@@ -4,9 +4,11 @@
     <li id="nav-title">
       Lessons
     </li>
+    <% if current_tutor %>
     <li>
-      <%= link_to 'New Lesson', new_lesson_path if current_tutor %>
+      <%= link_to 'New Lesson', new_lesson_path %>
     </li>
+    <% end %>
   </ul>
 </nav>
 <% end %>

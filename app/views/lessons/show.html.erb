@@ -7,9 +7,11 @@
     <li>
       <%= link_to "Questions (#{questions_count @lesson})", questions_path(lesson_id: @lesson.id)%>
     </li>
+    <% if current_tutor %>
     <li>
-      <%= link_to 'Update Lesson', edit_lesson_path(@lesson) if current_tutor %>
+      <%= link_to 'Update Lesson', edit_lesson_path(@lesson) %>
     </li>
+    <% end %>
     <li>
       <%= link_to 'Back', lessons_path %>
     </li>

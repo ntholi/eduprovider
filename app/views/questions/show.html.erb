@@ -1,3 +1,19 @@
+<% content_for :section_nav do %>
+<nav id="side-nav">
+  <ul>
+    <li id="nav-title">
+      Questions
+    </li>
+    <li>
+      <%= link_to "Questions (#{questions_count @question.lesson})", questions_path(lesson_id: @question.lesson.id)%>
+    </li>
+    <li>
+      <%= link_to 'Ask Question', new_question_path(lesson_id: @question.lesson.id) %>
+    </li>
+  </ul>
+</nav>
+<% end %>
+
 <header id="question-header">
   <h1><%= @question.title %></h1>
   Lesson:
