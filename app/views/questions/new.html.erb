@@ -13,6 +13,7 @@
 
 <h1>Question</h1>
 <p>
-  Ask a question on '<%= @question.lesson %>' lesson
+  Lesson:
+  <%= link_to @question.lesson, @question.lesson %>
 </p>
 <%= render 'form', question: @question %>
