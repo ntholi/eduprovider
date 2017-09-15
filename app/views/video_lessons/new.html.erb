@@ -1,5 +1,25 @@
 <h1>New Video Lesson</h1>
 
-<%= render 'form', video_lesson: @video_lesson %>
+<div id="video-capture">
+  <h1><a href="//webrtc.github.io/samples/" title="WebRTC samples homepage">WebRTC samples</a> <span>MediaRecorder</span></h1>
+
+  <p>This demo requires Firefox 29 or later, or Chrome 47 or later with <strong>Enable experimental Web Platform features</strong> enabled from chrome://flags.</p>
+
+  <p>For more information see the MediaStream Recording API <a href="http://w3c.github.io/mediacapture-record/MediaRecorder.html" title="W3C MediaStream Recording API Editor's Draft">Editor's&nbsp;Draft</a>.</p>
+
+  <video id="gum" autoplay muted></video>
+  <video id="recorded" autoplay loop></video>
+
+  <div>
+    <button id="record" disabled>Start Recording</button>
+    <button id="play" disabled>Play</button>
+    <button id="download" disabled>Download</button>
+  </div>
+
+  <a href="https://github.com/webrtc/samples/tree/gh-pages/src/content/getusermedia/record" title="View source for this page on GitHub" id="viewSource">View source on GitHub</a>
+</div>
+<%#= render 'form', video_lesson: @video_lesson %>
 
 <%= link_to 'Back', lessons_path %>
+
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
